@@ -1,0 +1,197 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>ABOUT - WebTrinity</title>
+    <link rel="stylesheet" type="text/css" href="style/wt.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+</head>
+<body>
+
+    <div class="leftSide" style="z-index:1;background-color: white;">
+        <!--좌측 최상단 로고 시작-->
+        <a href="index.html?menu=about">
+            <img src="images/webTrinity_logo.jpg" id="logo" alt="Web Trinity" title="클릭하면 Web Trinity에 대한 설명으로 이동합니다." />
+        </a>
+        <!--좌측 최상단 로고 끝-->
+
+        <link rel="stylesheet" type="text/css" href="style/login.css">
+        <script type="text/javascript" src="script/login.js"></script>
+
+        <table border="0" cellpadding="0" cellspacing="0" class="none">
+            <tr id="trLogin" name="trLogin" class="none">
+                <td class="none">
+                    <div class="login">
+                        <form id="loginForm" name="loginForm" method="post" onsubmit="return loginChk()" action="member/loginProcess.html">
+                            <input type="text" id="userId" name="userId" placeholder="ID">
+                            <input type="password" id="userPw" name="userPw"
+                                   autocomplete="off" placeholder="PASSWORD">
+                            <br>
+                            <input type="submit" id="login" name="login" value="로그인">
+                            <input type="button" id="join" name="join" value="회원가입" onclick="javascript:viewJoin();">
+                        </form>
+                    </div>
+                </td>
+            </tr>
+            <tr id="trJoin" name="trJoin" style="display:none" class="none">
+                <td class="none">
+                    <div class="join">
+                        <form id="joinForm" name="joinForm" method="post" onSubmit="return joinCheck();" action="#">
+                            <div>
+                                <input type="hidden" name='photo' id="photo" value="type_a.png">
+                                <img src="images/type_a.png" id="photo_img" name="photo_img" onclick="javascript:newPopup('member/select.html');" style="width:130px; height:130px; padding-top:0px; margin:19px 0 10px 0; cursor:pointer; border-radius:100%;"
+                                     title="사진을 누르면 프로필 사진을 변경 할 수 있어요!!" />
+                            </div>
+
+                            <input type="text" id="joinId" name="userId" placeholder="ID" title="아이디를 입력해주세요.">
+                            <input type="password" id="joinPw" name="userPw" autocomplete="off" placeholder="PASSWORD" title="비번을 입력해주세요.">
+                            <input type="password" id="joinPwCheck" name="userPwCheck" autocomplete="off" placeholder="PASSWORD CHECK" title="다시확인~">
+                            <br>
+                            <input type="submit" id="joinGo" name="joinGo" value="가입하기" title="여길 누르면 가입하는거에요">
+                            <input type="button" class="goBack" id="goBack" name="goBack" value="돌아가기" onclick="javascript:viewLogin();" title="취소하고 전화면으로 갈 수 있어요.">
+                        </form>
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+
+        <!--드롭다운 메뉴 시작-->
+        <div class="dropdown">
+            <a href="#web_trinity">
+                <button class="dropbtn" id="about" style="cursor: pointer;"
+                        onclick="'index.html?menu=about#web_trinity'">
+                    ABOUT
+                </button>
+            </a>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn" id="htmlMenu" onMouseOver="this.innerHTML='HTML&nbsp;&nbsp;△'"
+                    onMouseOut="this.innerHTML='HTML&nbsp;&nbsp;▼'">
+                HTML&nbsp;&nbsp;▼
+            </button>
+            <div class="dropdown-content">
+                <a href="contents/hs.html" id="htmlMenu">
+                    <p class="study">STUDY</p>
+                </a>
+                <a href="contents/hq.html" id="htmlMenu">
+                    <p class="qna">Q&amp;A</p>
+                </a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn" id="cssMenu" onMouseOver="this.innerHTML='CSS&nbsp;&nbsp;△'"
+                    onMouseOut="this.innerHTML='CSS&nbsp;&nbsp;▼'">
+                CSS&nbsp;&nbsp;▼
+            </button>
+            <div class="dropdown-content">
+                <a href="contents/cs.html" id="cssMenu">
+                    <p class="study">STUDY</p>
+                </a>
+                <a href="contents/cq.html" id="cssMenu">
+                    <p class="qna">Q&amp;A</p>
+                </a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn" id="jsMenu" onMouseOver="this.innerHTML='JAVASCRIPT&nbsp;&nbsp;△'"
+                    onMouseOut="this.innerHTML='JAVASCRIPT&nbsp;&nbsp;▼'">
+                JAVASCRIPT&nbsp;&nbsp;▼
+            </button>
+            <div class="dropdown-content">
+                <a href="contents/js.html" id="jsMenu">
+                    <p class="study">STUDY</p>
+                </a>
+                <a href="contents/jq.html" id="jsMenu">
+                    <p class="qna">Q&amp;A</p>
+                </a>
+            </div>
+        </div>
+        <!--드롭다운 메뉴 끝-->
+    </div>
+
+
+
+    <!--본문 영역-->
+    <div class="article">
+        <!--제목-->
+        <div class="title">
+            <p class="title">&lt;Hello World/&gt;</p>
+        </div>
+        <div class="logo_article" style="text-align:center;">
+            <img src="images/pngflow.com.png" style="width: 192px;
+			margin-top: 20px; margin-bottom: 20px;" alt="Cute Chick" title="코딩의 세계에 오신걸 '환 to the 영' 해요!!" />
+        </div>
+        <div class="contents">
+            <span>&lt;welcome&gt;</span>
+            <div class="intro">
+                CODING의 세계에 오신 당신, 환영합니다!
+                <br>
+                <br>
+                WEB TRINITY는 모든 코딩의 기본인 HTML, CSS, JAVASCRIPT를 학습하는
+                <br>
+                무료 사이트입니다.
+                <br>
+                이 곳에서 당신의 기발한 코딩 문법과 공부 방법을 공유해 주세요.
+                <br>
+                당신이 IT업계 어느 분야에 위치해 있든 당신의 노하우는 이 곳,
+                <br>
+                WEB TRINITY에서 CODING 여행자들에게 사막의 오아시스가 될 것입니다!
+                <br>
+                <br>
+                우리는 당신의 무궁한 발전을 기원합니다.
+            </div>
+            <span>&lt;/welcome&gt;</span>
+        </div>
+
+        <a name="web_trinity"></a>
+        <div class="title">
+            <p class="title">&lt;Web Trinity/&gt;</p>
+        </div>
+        <div class="logo_article" style="text-align:center;">
+            <img src="images/webTrinity_logo_type.jpg" style="width:384px;" alt="Web Trinity" title="로고이쁘죠;ㅜ 제가 만들었어요;ㅜ" />
+        </div>
+        <div class="contents">
+            우리 WEB TRINITY는 간단한 HTML, CSS, JAVASCRIPT의 소개와<br>
+            실습을 매일매일 올리는 <span id="selfstudy">능동학습형</span> 게시판입니다.
+            <br>
+            <br>
+            매일 학습한 것을 올리시면서 다른 분들과 소스코드를 공유하여 실력발전을 도모합니다.
+            <br>
+            소스코드를 공유하면 내가 짠 코드보다 더 좋은 방법이 있는지 알아볼 수 있고,
+            <br>
+            다른 사용자의 코드를 리뷰하면서 코드리딩 능력을 키울 수 있습니다.
+            <br>
+            <br>
+            우리의 로고는 각 색깔이 모여 흰색을 이루는 삼원색에서 따왔으며, 각각의 색 의미는
+            <br>
+            <span id="cherryred">다홍</span>(HTML), <span id="yellow">노랑</span>(JAVASCRIPT), <span id="blue">파랑</span>(CSS), <span style="color:lightgray; font-weight:bold;">흰색</span>(WEB)을 뜻합니다.
+            <br>
+            <br>
+            이 색채가 뚜렷한 세 가지의 언어들이 모여 모든 웹을 이루는 것과 결이 같음을 표현했습니다.
+            <br>
+        </div>
+        <!--trinity 세 이미지-->
+        <!--
+            div class trinity에 height 속성이 없어서
+            아래 p태그 내 글씨가 이 영역을 침범함
+            따라서 height를 지정하고 margin bottom에도 값 추가
+        -->
+        <div class="trinity">
+            <div id="htmlLogo">
+                <img src="images/html.png" class="trinityLogo" alt="HTML" />
+            </div>
+            <div id="cssLogo">
+                <img src="images/css.png" class="trinityLogo"
+                     style="padding-left: 20px;" alt="CSS" />
+            </div>
+            <div id="jsLogo">
+                <img src="images/js.png" class="trinityLogo" alt="JAVASCRIPT" />
+            </div>
+
+        </div>
+        <p id="webtrinity_kr">웹 삼총사!!!</p>
+    </div>
+</body>
+</html>
